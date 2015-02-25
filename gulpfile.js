@@ -25,7 +25,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('sass', function() {
-	return gulp.src('src/sass/*.scss')
+	return gulp.src('src/sass/*.sass')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(autoprefixer({
 			browsers: ['last 2 versions'],
@@ -58,7 +58,7 @@ gulp.task('server', function () {
 	server.run(['./bin/www']);
 
 	gulp.watch('public/stylesheets/!(style)*.css',['css']);
-	gulp.watch('src/sass/*.scss', ['sass']);
+	gulp.watch('src/sass/*.sass', ['sass']);
 	gulp.watch('public/javascripts/*.js',['lint']);
 	gulp.watch('views/**/*.jade', ['templates']);
 
